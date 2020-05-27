@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC -//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+ <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Toon with Doozie</title>
+  <meta name="description" content="">
+  <meta name="author" content="santdas36">
+  <meta name="theme-color" content="#fff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="css/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="css/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+	<a href="#" class="nav-toggle mobile-only"></a>
+	<nav class="nav">
+		<ul class="nav-menu">
+			<li><a href="#" class="nav-link">About</a></li>
+			<li class="dropdown-toggle">
+				<a href="#" class="nav-link">Videos</a>
+				<ul class="dropdown-menu">
+					<li><a href="#" class="dropdown-link">Animations</a></li>
+					<li><a href="#" class="dropdown-link">Tutorials</a></li>
+				</ul>
+			</li>
+			<li><a href="#" class="nav-link">Apps</a></li>
+			<li><a href="#" class="nav-link">Contact</a></li>
+			<li><a href="#" class="nav-link subscribe">Subscribe</a></li>
+			<span class="social">
+			<li><a href="#" class="social-link"><span class="fab fa-fw fa-instagram"></span></a></li>
+			<li><a href="#" class="social-link"><span class="fab fa-fw fa-reddit-alien"></span></a></li>
+			<li><a href="#" class="social-link"><span class="fab fa-fw fa-youtube"></span></a></li>
+			</span>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<section id="home">
+			<div class="container">
+				<div class="hero">
+					<img alt="logo" class="logo" src="logo.svg">
+					<h1 class="title"><i>Toon with</i> Doozie</h1>
+					<p class="description">Stick Figure Animations, <br>Tutorials and more!</p>
+					<div class="cta">
+						<a class="btn btn-primary subscribe" href="#">Subscribe</a>
+						<a class="btn btn-secondary" href="#">Watch Now</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="container">
+			</div>
+		</section>
+		<section id="animations">
+			<div class="container">
+			</div>
+		</section>
+		<section id="tutorials">
+			<div class="container">
+			</div>
+		</section>
+		<section id="apps">
+			<div class="container">
+			</div>
+		</section>
+		<section id="contact">
+			<div class="container">
+			</div>
+		</section>
+	</div>
+	
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+  	$('.nav-toggle').on('click', function(event) {
+  		event.preventDefault();
+  		$('.nav, .nav-toggle, .wrapper').toggleClass('isOpen');
+  	});
+  	$('.dropdown-toggle').on('click', function(event) {
+  		event.preventDefault();
+  		$('.dropdown-menu').toggleClass('isOpen');
+  	});
+  });
+  </script>
+
+</body>
+ </html>
