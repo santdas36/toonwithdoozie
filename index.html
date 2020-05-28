@@ -70,6 +70,26 @@
 		</section>
 		<section id="contact">
 			<div class="container">
+				<form class="contact">
+					<div class="input-group">
+						<input type="text" id="name" name="name" />
+						<label for="name">Name</label>
+						<span class="error fas fa-exclamation-circle"></span>
+					</div>
+					<div class="input-group">
+						<input type="email" id="email" name="email" />
+						<label for="email">Email Address</label>
+						<span class="error fas fa-exclamation-circle"></span>
+					</div>
+					<div class="input-group">
+						<textarea id="message" name="message"></textarea>
+						<label for="message">Message</label>
+						<span class="error fas fa-exclamation-circle"></span>
+					</div>
+					<div class="input-group">
+						<input type="submit" value="Send Message" />
+					</div>
+				</form>
 			</div>
 		</section>
 	</div>
@@ -85,7 +105,122 @@
   		event.preventDefault();
   		$('.dropdown-menu').toggleClass('isOpen');
   	});
-  });
+  	$('input[type="text"], input[type="email"], textarea').on('focus', function() {
+  		$(this).addClass('active');
+  		$(this).next('label').addClass('active');
+  	});
+  	$('input[type="text"], input[type="email"], textarea').on('blur keyup keydown', function() {
+  		submitValidate();
+  	});
+  	var formFlag = [];
+  	function basicValidate(element) {
+  		if (!element.val().length) {
+  			element.removeClass('active');
+  			element.next('label').removeClass('active');
+  			element.parent().find('.error').css('opacity', 1);
+  			formValidate(element);
+  			return false;
+  		}
+  	}
+  	function validateEmail($email) {
+  		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  		return emailReg.test( $email );
+  	}  	
+  	function showError(element) {
+  		element.parent().find('.error').css('opacity', 1);
+  	}
+  	function hideError(element) {
+  		element.parent().find('.error').css('opacity', 00);
+  	}
+  	$('input[name="name"]').on('blur', function() {
+  		if (basicValidate($(this))) {}
+  		else if ($(this).val().length < 3) {
+  			showError($(this));
+  			formValidate($(this));
+  		} else {
+  			formFlag[0] = 1;
+  		}
+  	});
+  	$('input[name="email"]').on('blur', function() {
+  		if (basicValidate($(this))) {}
+  		else if ( !validateEmail($(this).val()) ) {
+  			showError($(this));
+  			formValidate($(this));
+  		} else {
+  			formFlag[1] = 1;
+  		}
+  	});
+  	$('textarea').on('blur', function() {
+  		if (basicValidate($(this))) {}
+  		else if ($(this).val().length < 11) {
+  			showError($(this));
+  			formValidate($(this));
+  		} else {
+  			formFlag[2] = 1;
+  		}
+  	});
+  	$('textarea').on('keydown', function() {
+  		if ($(this).val().length < 11) {
+  			formFlag[2] = 0;
+  		}
+  		else {
+  			formFlag[2] = 1;
+  		}
+  	});
+  	function formValidate(element) {
+  		if (element.attr('id') == "name") {
+  			element.on('keydown', function() {
+  				if ($(this).val().length < 3) {
+  					showError($(this));
+  					formFlag[0] = 0;
+  				} else {
+  					hideError($(this));
+  					formFlag[0] = 1;
+  				}
+  			});
+  		}
+  		if (element.attr('id') == "email") {
+  			element.on('keydown', function() {
+  			setTimeout(() => {
+  				if ( !validateEmail($(this).val()) ) {
+  					showError($(this));
+  					formFlag[1] = 0;
+  				} else {
+  					hideError($(this));
+  					formFlag[1] = 1;
+  				}
+  				}, 100);
+  			});
+  		}
+  		if (element.attr('id') == "message") {
+  			element.on('keydown', function() {
+  				if ($(this).val().length < 11) {
+  					showError($(this));
+  					formFlag[2] = 0;
+  				} else {
+  					hideError($(this));
+  					formFlag[2] = 1;
+  				}
+  			});
+  		}
+  	}
+  	function submitValidate() {
+  		if ( formFlag[0] == 1 && formFlag[1] == 1 && formFlag[2] == 1) {
+  			$('input[type="submit"]').addClass('valid');
+  		} else {
+  			$('input[type="submit"]').removeClass('valid');
+  		}
+  	}
+  	$('form.contact').on('submit', function(event) {
+  		event.preventDefault();
+  		if ($('input[type="submit"]').hasClass('valid')) {
+  		} else {
+  			basicValidate($('input[name="name"]'));
+  			basicValidate($('input[name="email"]'));
+  			basicValidate($('textarea'));
+  		}
+  	});
+   });
   </script>
 
 </body>
