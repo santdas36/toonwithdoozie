@@ -74,17 +74,17 @@
 					<div class="input-group">
 						<input type="text" id="name" name="name" />
 						<label for="name">Name</label>
-						<span class="error fas fa-exclamation-circle"></span>
+						<span class="error fas fa-exclamation-circle" data-error="Minimum 4 characters =)"></span>
 					</div>
 					<div class="input-group">
 						<input type="email" id="email" name="email" />
 						<label for="email">Email Address</label>
-						<span class="error fas fa-exclamation-circle"></span>
+						<span class="error fas fa-exclamation-circle" data-error="Please provide a valid email"></span>
 					</div>
 					<div class="input-group">
 						<textarea id="message" name="message"></textarea>
 						<label for="message">Message</label>
-						<span class="error fas fa-exclamation-circle"></span>
+						<span class="error fas fa-exclamation-circle" data-error="Minimum 12 characters"></span>
 					</div>
 					<div class="input-group">
 						<input type="submit" value="Send Message" />
@@ -94,7 +94,7 @@
 		</section>
 	</div>
 	
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <script src="jquery.min.js"></script>
   <script>
   $(document).ready(function() {
   	$('.nav-toggle').on('click', function(event) {
