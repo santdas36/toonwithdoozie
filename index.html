@@ -11,34 +11,36 @@
   <link href="css/fontawesome/css/brands.min.css" rel="stylesheet">
   <link href="css/fontawesome/css/solid.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/bsreboot.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-	<a href="#" class="nav-toggle mobile-only"></a>
-	<nav class="nav">
-		<ul class="nav-menu">
-			<li><a href="#" class="nav-link">About</a></li>
-			<li class="dropdown-toggle">
-				<a href="#" class="nav-link">Videos</a>
-				<ul class="dropdown-menu">
-					<li><a href="#" class="dropdown-link">Animations</a></li>
-					<li><a href="#" class="dropdown-link">Tutorials</a></li>
-				</ul>
-			</li>
-			<li><a href="#" class="nav-link">Apps</a></li>
-			<li><a href="#" class="nav-link">Contact</a></li>
-			<li><a href="#" class="nav-link subscribe">Subscribe</a></li>
-			<span class="social">
-			<li><a href="#" class="social-link"><span class="fab fa-fw fa-instagram"></span></a></li>
-			<li><a href="#" class="social-link"><span class="fab fa-fw fa-reddit-alien"></span></a></li>
-			<li><a href="#" class="social-link"><span class="fab fa-fw fa-youtube"></span></a></li>
-			</span>
-		</ul>
-	</nav>
+	<header>
+		<a href="#" class="nav-toggle mobile-only"></a>
+		<nav class="nav">
+			<ul class="nav-menu">
+				<li class="dropdown-toggle">
+					<a href="#" class="nav-link">Videos</a>
+					<ul class="dropdown-menu">
+						<li><a href="#" class="dropdown-link">Animations</a></li>
+						<li><a href="#" class="dropdown-link">Tutorials</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="nav-link">Resources</a></li>
+				<li><a href="#" class="nav-link">Contact</a></li>
+				<li><a href="#" class="nav-link subscribe">Subscribe</a></li>
+				<span class="social">
+				<li><a href="#" class="social-link"><span class="fab fa-fw fa-instagram"></span></a></li>
+				<li><a href="#" class="social-link"><span class="fab fa-fw fa-reddit-alien"></span></a></li>
+				<li><a href="#" class="social-link"><span class="fab fa-fw fa-youtube"></span></a></li>
+				</span>
+			</ul>
+		</nav>
+	</header>
+
 	<div class="wrapper">
+	<main>
 		<section id="home">
 			<div class="container">
 				<div class="hero">
@@ -68,8 +70,16 @@
 			<div class="container">
 			</div>
 		</section>
+		<section id="cta">
+			<div class="container">
+				<h2>Haven't subscribed to my channel yet?</h2>
+				<small>Come on, now!</small>
+				<a class="btn btn-primary subscribe" href="#">Subscribe</a>
+			</div>
+		</section>
 		<section id="contact">
 			<div class="container">
+				<h2>Contact</h2>
 				<form class="contact">
 					<div class="input-group">
 						<input type="text" id="name" name="name" />
@@ -92,7 +102,17 @@
 				</form>
 			</div>
 		</section>
-	</div>
+	</main>
+	<footer>
+		<div>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 104 104" xml:space="preserve" class="cc">
+			<path d="M40.156 66.088a14.05 14.05 0 0 0 9.573-3.751 2 2 0 0 0-2.719-2.934 10.055 10.055 0 0 1-6.854 2.686c-5.563 0-10.088-4.526-10.088-10.088 0-5.562 4.525-10.088 10.088-10.088 2.548 0 4.98.952 6.849 2.681a2 2 0 0 0 2.717-2.936 14.043 14.043 0 0 0-9.565-3.745c-7.769 0-14.088 6.32-14.088 14.088 0 7.768 6.318 14.087 14.087 14.087zM67.156 66.088a14.05 14.05 0 0 0 9.573-3.751 2 2 0 0 0-2.719-2.934 10.055 10.055 0 0 1-6.854 2.686c-5.563 0-10.088-4.526-10.088-10.088 0-5.562 4.525-10.088 10.088-10.088 2.548 0 4.98.952 6.849 2.681a2 2 0 0 0 2.717-2.936 14.043 14.043 0 0 0-9.565-3.745c-7.769 0-14.088 6.32-14.088 14.088 0 7.768 6.318 14.087 14.087 14.087z"/>
+			<path d="M52 94c22.766 0 42-19.233 42-42S74.766 10 52 10 10 29.233 10 52s19.234 42 42 42zm0-80c20.598 0 38 17.402 38 38S72.598 90 52 90 14 72.598 14 52s17.402-38 38-38z"/>
+		</svg>
+		<small>Creative Commons | @<a href="https://santdas.ga" class="link">toonwithdoozie</a></small>
+		</div>
+	</footer>
+	</div> <!-- end wrapper -->
 	
   <script src="jquery.min.js"></script>
   <script>
